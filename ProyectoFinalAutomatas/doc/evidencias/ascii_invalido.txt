@@ -1,0 +1,4 @@
+$ python er_afd.py 'a' 'ñ'
+Error: La cadena debe contener únicamente caracteres ASCII.
+
+Código de salida: 2

@@ -1,0 +1,1026 @@
+{
+  "fecha": "20 de octubre de 2026",
+  "estudiante": "SELVIN KLEBER GIRÓN ALVAREZ",
+  "carnet": "3190-15-15973",
+  "sistema": "Windows-11-10.0.26300-SP0",
+  "python": "3.12.10",
+  "estadisticas": {
+    "metodos": 10,
+    "expresiones": 42,
+    "evaluaciones": 152,
+    "expresiones_invalidas": 24,
+    "combinaciones": 1023,
+    "caracteres_complementos": 256
+  },
+  "registros": [
+    {
+      "id": "aceptacion",
+      "expresion": "(a|b)*abb",
+      "cadena": "aabb",
+      "comando": "python er_afd.py '(a|b)*abb' 'aabb'",
+      "codigo": 1,
+      "esperado": 1,
+      "stdout": "AFND\nQ={q0,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12,q13}\nΣ={a,b,ε}\nInicial=q0\nF={q13}\nq0|ε|{q5,q7}\nq1|a|{q2}\nq2|ε|{q6}\nq3|b|{q4}\nq4|ε|{q6}\nq5|ε|{q1,q3}\nq6|ε|{q5,q7}\nq7|ε|{q8}\nq8|a|{q9}\nq9|ε|{q10}\nq10|b|{q11}\nq11|ε|{q12}\nq12|b|{q13}\n\nAFD\nQ={Q0,Q1,Q2,Q3,Q4}\nΣ={a,b}\nInicial=Q0\nF={Q4}\nQ0|a|Q1\nQ0|b|Q2\nQ1|a|Q1\nQ1|b|Q3\nQ2|a|Q1\nQ2|b|Q2\nQ3|a|Q1\nQ3|b|Q4\nQ4|a|Q1\nQ4|b|Q2\n\nRecorrido\nQ0|a|Q1\nQ1|a|Q1\nQ1|b|Q3\nQ3|b|Q4\nCadena aceptada\n",
+      "stderr": ""
+    },
+    {
+      "id": "rechazo",
+      "expresion": "(a|b)*abb",
+      "cadena": "abba",
+      "comando": "python er_afd.py '(a|b)*abb' 'abba'",
+      "codigo": 0,
+      "esperado": 0,
+      "stdout": "AFND\nQ={q0,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12,q13}\nΣ={a,b,ε}\nInicial=q0\nF={q13}\nq0|ε|{q5,q7}\nq1|a|{q2}\nq2|ε|{q6}\nq3|b|{q4}\nq4|ε|{q6}\nq5|ε|{q1,q3}\nq6|ε|{q5,q7}\nq7|ε|{q8}\nq8|a|{q9}\nq9|ε|{q10}\nq10|b|{q11}\nq11|ε|{q12}\nq12|b|{q13}\n\nAFD\nQ={Q0,Q1,Q2,Q3,Q4}\nΣ={a,b}\nInicial=Q0\nF={Q4}\nQ0|a|Q1\nQ0|b|Q2\nQ1|a|Q1\nQ1|b|Q3\nQ2|a|Q1\nQ2|b|Q2\nQ3|a|Q1\nQ3|b|Q4\nQ4|a|Q1\nQ4|b|Q2\n\nRecorrido\nQ0|a|Q1\nQ1|b|Q3\nQ3|b|Q4\nQ4|a|Q1\nCadena rechazada\n",
+      "stderr": ""
+    },
+    {
+      "id": "epsilon",
+      "expresion": "ε",
+      "cadena": "",
+      "comando": "python er_afd.py 'ε' ''",
+      "codigo": 1,
+      "esperado": 1,
+      "stdout": "AFND\nQ={q0,q1}\nΣ={ε}\nInicial=q0\nF={q1}\nq0|ε|{q1}\n\nAFD\nQ={Q0}\nΣ={}\nInicial=Q0\nF={Q0}\n\nRecorrido\nCadena aceptada\n",
+      "stderr": ""
+    },
+    {
+      "id": "solapamiento",
+      "expresion": ".b|ac",
+      "cadena": "ac",
+      "comando": "python er_afd.py '.b|ac' 'ac'",
+      "codigo": 1,
+      "esperado": 1,
+      "stdout": "AFND\nQ={q0,q1,q2,q3,q4,q5,q6,q7,q8,q9}\nΣ={.,b,a,c,ε}\nInicial=q0\nF={q9}\nq0|ε|{q1,q5}\nq1|.|{q2}\nq2|ε|{q3}\nq3|b|{q4}\nq4|ε|{q9}\nq5|a|{q6}\nq6|ε|{q7}\nq7|c|{q8}\nq8|ε|{q9}\n\nAFD\nQ={Q0,Q1,Q2,Q3,Q4,Q5}\nΣ={.,b,a,c}\nInicial=Q0\nF={Q3,Q5}\nClases de entrada={b,a,c,[^a-c]}\nLa tabla usa clases disjuntas para evitar coincidencias entre símbolos.\nQ0|b|Q1\nQ0|a|Q2\nQ0|c|Q1\nQ0|[^a-c]|Q1\nQ1|b|Q3\nQ1|a|Q4\nQ1|c|Q4\nQ1|[^a-c]|Q4\nQ2|b|Q3\nQ2|a|Q4\nQ2|c|Q5\nQ2|[^a-c]|Q4\nQ3|b|Q4\nQ3|a|Q4\nQ3|c|Q4\nQ3|[^a-c]|Q4\nQ4|b|Q4\nQ4|a|Q4\nQ4|c|Q4\nQ4|[^a-c]|Q4\nQ5|b|Q4\nQ5|a|Q4\nQ5|c|Q4\nQ5|[^a-c]|Q4\n\nRecorrido\nQ0|a|Q2\nQ2|c|Q5\nCadena aceptada\n",
+      "stderr": ""
+    },
+    {
+      "id": "rango_invalido",
+      "expresion": "[z-a]",
+      "cadena": "a",
+      "comando": "python er_afd.py '[z-a]' 'a'",
+      "codigo": 2,
+      "esperado": 2,
+      "stdout": "",
+      "stderr": "Error: El rango debe estar en orden ascendente (posición 5).\n"
+    },
+    {
+      "id": "hexadecimal_invalido",
+      "expresion": "\\hGG",
+      "cadena": "A",
+      "comando": "python er_afd.py '\\hGG' 'A'",
+      "codigo": 2,
+      "esperado": 2,
+      "stdout": "",
+      "stderr": "Error: \\h requiere dos dígitos hexadecimales (posición 3).\n"
+    },
+    {
+      "id": "parentesis_invalido",
+      "expresion": "(ab",
+      "cadena": "ab",
+      "comando": "python er_afd.py '(ab' 'ab'",
+      "codigo": 2,
+      "esperado": 2,
+      "stdout": "",
+      "stderr": "Error: Falta cerrar el paréntesis (posición 4).\n"
+    },
+    {
+      "id": "ascii_invalido",
+      "expresion": "a",
+      "cadena": "ñ",
+      "comando": "python er_afd.py 'a' 'ñ'",
+      "codigo": 2,
+      "esperado": 2,
+      "stdout": "",
+      "stderr": "Error: La cadena debe contener únicamente caracteres ASCII.\n"
+    },
+    {
+      "id": "pruebas_automaticas",
+      "comando": "python -X utf8 pruebas.py",
+      "codigo": 0,
+      "stdout": "",
+      "stderr": "test_cadenas (__main__.PruebasAutomatas.test_cadenas) ... ok\ntest_clases_sin_solapamientos (__main__.PruebasAutomatas.test_clases_sin_solapamientos) ... ok\ntest_combinaciones (__main__.PruebasAutomatas.test_combinaciones) ... ok\ntest_complementos_ascii (__main__.PruebasAutomatas.test_complementos_ascii) ... ok\ntest_consola (__main__.PruebasAutomatas.test_consola) ... ok\ntest_consola_cadena_vacia_y_guion (__main__.PruebasAutomatas.test_consola_cadena_vacia_y_guion) ... ok\ntest_consola_codificacion_windows (__main__.PruebasAutomatas.test_consola_codificacion_windows) ... ok\ntest_consola_errores (__main__.PruebasAutomatas.test_consola_errores) ... ok\ntest_expresiones_invalidas (__main__.PruebasAutomatas.test_expresiones_invalidas) ... ok\ntest_orden_alfabeto (__main__.PruebasAutomatas.test_orden_alfabeto) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 1.365s\n\nOK\n"
+    }
+  ],
+  "casos_funcionales": [
+    {
+      "expresion": "ab",
+      "cadena": "ab",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "ab",
+      "cadena": "",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "ab",
+      "cadena": "a",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "ab",
+      "cadena": "abc",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "a|bc",
+      "cadena": "a",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "a|bc",
+      "cadena": "bc",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "a|bc",
+      "cadena": "b",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "a|bc",
+      "cadena": "ac",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "(a|b)c",
+      "cadena": "ac",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "(a|b)c",
+      "cadena": "bc",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "(a|b)c",
+      "cadena": "a",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "(a|b)c",
+      "cadena": "abc",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "a*",
+      "cadena": "",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "a*",
+      "cadena": "a",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "a*",
+      "cadena": "aaaa",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "a*",
+      "cadena": "b",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "a*",
+      "cadena": "ab",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "(a|b)*abb",
+      "cadena": "abb",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "(a|b)*abb",
+      "cadena": "aabb",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "(a|b)*abb",
+      "cadena": "bababb",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "(a|b)*abb",
+      "cadena": "",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "(a|b)*abb",
+      "cadena": "ab",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "(a|b)*abb",
+      "cadena": "abba",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "ε",
+      "cadena": "",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "ε",
+      "cadena": "a",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "aεb",
+      "cadena": "ab",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "aεb",
+      "cadena": "a",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "aεb",
+      "cadena": "aeb",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "(ε|a)b",
+      "cadena": "b",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "(ε|a)b",
+      "cadena": "ab",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "(ε|a)b",
+      "cadena": "",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "(ε|a)b",
+      "cadena": "aab",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "(a*)*",
+      "cadena": "",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "(a*)*",
+      "cadena": "aaaa",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "(a*)*",
+      "cadena": "b",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": ".",
+      "cadena": "a",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": ".",
+      "cadena": "7",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": ".",
+      "cadena": " ",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": ".",
+      "cadena": "\n",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": ".",
+      "cadena": "\u0000",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": ".",
+      "cadena": "",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": ".",
+      "cadena": "",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": ".",
+      "cadena": "ab",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[abc]",
+      "cadena": "a",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[abc]",
+      "cadena": "b",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[abc]",
+      "cadena": "c",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[abc]",
+      "cadena": "",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[abc]",
+      "cadena": "d",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[abc]",
+      "cadena": "ab",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[^abc]",
+      "cadena": "d",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[^abc]",
+      "cadena": "7",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[^abc]",
+      "cadena": " ",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[^abc]",
+      "cadena": "a",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[^abc]",
+      "cadena": "b",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[^abc]",
+      "cadena": "ab",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[a-z][0-9]",
+      "cadena": "a0",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[a-z][0-9]",
+      "cadena": "z9",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[a-z][0-9]",
+      "cadena": "A0",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[a-z][0-9]",
+      "cadena": "a",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[a-z][0-9]",
+      "cadena": "aa",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[a-zA-Z]*",
+      "cadena": "",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[a-zA-Z]*",
+      "cadena": "Hola",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[a-zA-Z]*",
+      "cadena": "aZ",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[a-zA-Z]*",
+      "cadena": "hola1",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[-a]",
+      "cadena": "-",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[-a]",
+      "cadena": "a",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[-a]",
+      "cadena": "b",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[a-]",
+      "cadena": "-",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[a-]",
+      "cadena": "a",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[a-]",
+      "cadena": "b",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "\\*",
+      "cadena": "*",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "\\*",
+      "cadena": "",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "\\*",
+      "cadena": "a",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "\\p",
+      "cadena": "p",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "\\p",
+      "cadena": "q",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "\\\\",
+      "cadena": "\\",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "\\\\",
+      "cadena": "",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "\\\\",
+      "cadena": "/",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "\\.",
+      "cadena": ".",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "\\.",
+      "cadena": "a",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "\\|",
+      "cadena": "|",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "\\|",
+      "cadena": "a",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "\\(a\\)",
+      "cadena": "(a)",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "\\(a\\)",
+      "cadena": "a",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "\\N\\N*",
+      "cadena": "0",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "\\N\\N*",
+      "cadena": "12345",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "\\N\\N*",
+      "cadena": "",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "\\N\\N*",
+      "cadena": "1a",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "\\h20",
+      "cadena": " ",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "\\h20",
+      "cadena": "",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "\\h20",
+      "cadena": "20",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "\\h41",
+      "cadena": "A",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "\\h41",
+      "cadena": "a",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "\\h00",
+      "cadena": "\u0000",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "\\h00",
+      "cadena": "0",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "\\h7F",
+      "cadena": "",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "\\h7F",
+      "cadena": "F",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "\\A\\A*",
+      "cadena": "A",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "\\A\\A*",
+      "cadena": "HOLA",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "\\A\\A*",
+      "cadena": "",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "\\A\\A*",
+      "cadena": "Hola",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "\\a\\a*",
+      "cadena": "a",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "\\a\\a*",
+      "cadena": "hola",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "\\a\\a*",
+      "cadena": "",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "\\a\\a*",
+      "cadena": "Hola",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "\\z\\z*",
+      "cadena": "A",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "\\z\\z*",
+      "cadena": "Hola",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "\\z\\z*",
+      "cadena": "",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "\\z\\z*",
+      "cadena": "Hola1",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[\\Nabc]",
+      "cadena": "0",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[\\Nabc]",
+      "cadena": "9",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[\\Nabc]",
+      "cadena": "b",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[\\Nabc]",
+      "cadena": "d",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[\\Nabc]",
+      "cadena": "ab",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[^\\N]",
+      "cadena": "a",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[^\\N]",
+      "cadena": " ",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[^\\N]",
+      "cadena": "0",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[^\\N]",
+      "cadena": "9",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[\\h41-\\h43]",
+      "cadena": "A",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[\\h41-\\h43]",
+      "cadena": "B",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[\\h41-\\h43]",
+      "cadena": "C",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[\\h41-\\h43]",
+      "cadena": "D",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[\\]\\-]",
+      "cadena": "]",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[\\]\\-]",
+      "cadena": "-",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[\\]\\-]",
+      "cadena": "a",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "hola mundo",
+      "cadena": "hola mundo",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "hola mundo",
+      "cadena": "holamundo",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "hola\\ mundo",
+      "cadena": "hola mundo",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "hola\\ mundo",
+      "cadena": "holamundo",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": ".b|ac",
+      "cadena": "ab",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": ".b|ac",
+      "cadena": "ac",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": ".b|ac",
+      "cadena": "zb",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": ".b|ac",
+      "cadena": "aa",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": ".b|ac",
+      "cadena": "bc",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "a.|ab",
+      "cadena": "ab",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "a.|ab",
+      "cadena": "ac",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "a.|ab",
+      "cadena": "a",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "a.|ab",
+      "cadena": "ba",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[^a]b|ac",
+      "cadena": "bb",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[^a]b|ac",
+      "cadena": "ac",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[^a]b|ac",
+      "cadena": "ab",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[^a]b|ac",
+      "cadena": "bc",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[^ab]|[^bc]",
+      "cadena": "a",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[^ab]|[^bc]",
+      "cadena": "c",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[^ab]|[^bc]",
+      "cadena": "z",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[^ab]|[^bc]",
+      "cadena": "b",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[^ab]|[^bc]",
+      "cadena": "",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[^\\h00-\\h7F]",
+      "cadena": "",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[^\\h00-\\h7F]",
+      "cadena": "a",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[^\\h00-\\h7F]",
+      "cadena": "\u0000",
+      "esperado": false,
+      "obtenido": false
+    },
+    {
+      "expresion": "[^\\h00-\\h7F]*",
+      "cadena": "",
+      "esperado": true,
+      "obtenido": true
+    },
+    {
+      "expresion": "[^\\h00-\\h7F]*",
+      "cadena": "a",
+      "esperado": false,
+      "obtenido": false
+    }
+  ],
+  "fuentes": {
+    "expresiones.py": "c271fb82c14daa855aec6681ac7b9ce0f75f28bac35798c90502ce278b24b111",
+    "automatas.py": "fb29ce8e54e6c34c68bf49a06b4164142880b6c8bc7c61b9e31fabf191bd8054",
+    "er_afd.py": "9065fee1a534fea672bf1ff2f3c595cb290a7b0d4069f154c28d47cc5902c08a",
+    "er-afd": "0bef1896d94b2598959013f5e276980e050eba858c530a9bcdb0b9b76deb3955",
+    "Makefile": "1d556fe87541e316a54885ede0229c050693ec507b6ddfa85c627a2addb2bf0e",
+    "pruebas.py": "dcc6eb5935865f1e15abf6dcd130a3b0ca8c0e66b70bce6ab366f986d7b92b67"
+  }
+}

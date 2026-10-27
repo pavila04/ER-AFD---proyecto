@@ -1,0 +1,18 @@
+$ python er_afd.py 'ε' ''
+AFND
+Q={q0,q1}
+Σ={ε}
+Inicial=q0
+F={q1}
+q0|ε|{q1}
+
+AFD
+Q={Q0}
+Σ={}
+Inicial=Q0
+F={Q0}
+
+Recorrido
+Cadena aceptada
+
+Código de salida: 1

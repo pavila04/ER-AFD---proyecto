@@ -1,0 +1,4 @@
+$ python er_afd.py '(ab' 'ab'
+Error: Falta cerrar el paréntesis (posición 4).
+
+Código de salida: 2

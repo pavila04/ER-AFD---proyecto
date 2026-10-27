@@ -1,0 +1,4 @@
+$ python er_afd.py '[z-a]' 'a'
+Error: El rango debe estar en orden ascendente (posición 5).
+
+Código de salida: 2

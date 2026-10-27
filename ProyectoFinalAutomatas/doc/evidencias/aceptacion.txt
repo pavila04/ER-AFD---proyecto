@@ -1,0 +1,44 @@
+$ python er_afd.py '(a|b)*abb' 'aabb'
+AFND
+Q={q0,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12,q13}
+Σ={a,b,ε}
+Inicial=q0
+F={q13}
+q0|ε|{q5,q7}
+q1|a|{q2}
+q2|ε|{q6}
+q3|b|{q4}
+q4|ε|{q6}
+q5|ε|{q1,q3}
+q6|ε|{q5,q7}
+q7|ε|{q8}
+q8|a|{q9}
+q9|ε|{q10}
+q10|b|{q11}
+q11|ε|{q12}
+q12|b|{q13}
+
+AFD
+Q={Q0,Q1,Q2,Q3,Q4}
+Σ={a,b}
+Inicial=Q0
+F={Q4}
+Q0|a|Q1
+Q0|b|Q2
+Q1|a|Q1
+Q1|b|Q3
+Q2|a|Q1
+Q2|b|Q2
+Q3|a|Q1
+Q3|b|Q4
+Q4|a|Q1
+Q4|b|Q2
+
+Recorrido
+Q0|a|Q1
+Q1|a|Q1
+Q1|b|Q3
+Q3|b|Q4
+Cadena aceptada
+
+Código de salida: 1

@@ -1,0 +1,18 @@
+$ python -X utf8 pruebas.py
+test_cadenas (__main__.PruebasAutomatas.test_cadenas) ... ok
+test_clases_sin_solapamientos (__main__.PruebasAutomatas.test_clases_sin_solapamientos) ... ok
+test_combinaciones (__main__.PruebasAutomatas.test_combinaciones) ... ok
+test_complementos_ascii (__main__.PruebasAutomatas.test_complementos_ascii) ... ok
+test_consola (__main__.PruebasAutomatas.test_consola) ... ok
+test_consola_cadena_vacia_y_guion (__main__.PruebasAutomatas.test_consola_cadena_vacia_y_guion) ... ok
+test_consola_codificacion_windows (__main__.PruebasAutomatas.test_consola_codificacion_windows) ... ok
+test_consola_errores (__main__.PruebasAutomatas.test_consola_errores) ... ok
+test_expresiones_invalidas (__main__.PruebasAutomatas.test_expresiones_invalidas) ... ok
+test_orden_alfabeto (__main__.PruebasAutomatas.test_orden_alfabeto) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.365s
+
+OK
+
+Código de salida: 0

@@ -1,0 +1,4 @@
+#!/usr/bin/env python3
+from er_afd import principal
+
+raise SystemExit(principal())

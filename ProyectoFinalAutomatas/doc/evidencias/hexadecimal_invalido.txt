@@ -1,0 +1,4 @@
+$ python er_afd.py '\hGG' 'A'
+Error: \h requiere dos dígitos hexadecimales (posición 3).
+
+Código de salida: 2
